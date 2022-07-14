@@ -1,5 +1,5 @@
 <div class="hero-card" [ngClass]="{'hero-card__marvel': hero.isMarvel, 'hero-card__dc': !hero.isMarvel}">
-    {{hero.name}}
+    {{hero.name | lowercase}}
     <img class="hero-img" [src]="hero.img" alt="hero">
     <button class="btn" [ngClass]="{'btn__marvel': hero.isMarvel, 'btn__dc': !hero.isMarvel}" (click)="changeTeam()">cambiame de team</button>
   </div>
