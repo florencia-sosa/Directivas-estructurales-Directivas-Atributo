@@ -1,6 +1,28 @@
-<ng-container *ngFor="let hero of heroes">
-  <p *ngIf="hero.age > 18">{{hero.name}}</p>
-</ng-container>
+<div class="container">
+  <app-header></app-header>
+
+  <div class="heroes-lists">
+    <div class="marvel-heroes">
+      MARVEL HEROES
+      <ng-container *ngFor="let hero of heroMarvel">
+        <app-card-hero [hero]="hero" (emitChangeTeam)="changeHeroTeam($event)"></app-card-hero>
+      </ng-container>
+    </div>
+    <div class="dc-heroes">
+      DC HEROES
+      <ng-container *ngFor="let hero of dcHeroes">
+        <app-card-hero [hero]="hero" (emitChangeTeam)="changeHeroTeam($event)"></app-card-hero>
+      </ng-container>
+    </div>
+  </div>
+  <!-- <ng-container *ngFor="let hero of heroMarvel">
+    <p>{{hero.name}}</p>
+  </ng-container> -->
+  <!-- <ng-container *ngFor="let hero of dcHeroes">
+    <p>{{hero.name}}</p>
+  </ng-container> -->
+
+</div>
 
 
 
